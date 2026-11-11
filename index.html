@@ -57,7 +57,7 @@ function calc(){const obs=S.obs.filter(o=>o.d>=D0).sort((a,b)=>a.d<b.d?-1:1),R=[
   const q=pUp(o.d),vv=ok&&q&&sh>0?sh*q.p:null;if(vv==null)miss=true;
   const r={d:o.d,pv:o.v,cap,vv,F:prev?cap-prev.cap:0};
   r.tp=prev?prev.tp*o.v/(prev.pv+r.F):1;
-  r.tv=!prev?(vv!=null?1:null):(vv!=null&&prev.vv!=null&&prev.tv!=null)?prev.tv*vv/(prev.vv+r.F):null;
+  r.tv=vv==null?null:(prev&&prev.tv!=null&&prev.vv!=null)?prev.tv*vv/(prev.vv+r.F):(R.some(x=>x.tv!=null)?null:1);
   R.push(r);prev=r});return{R,miss}}
 // ---- Gráfico genérico ----
 function plot(id,pts,t0,t1,ser,o){const svg=$("#"+id),W=svg.parentNode.clientWidth;svg._a=[...arguments];if(!W)return;
