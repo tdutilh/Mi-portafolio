@@ -40,7 +40,7 @@ nav{display:flex;gap:4px;border-bottom:1px solid var(--bd);overflow-x:auto}nav b
 <div class="card"><h2>Valor del portafolio (cada lunes)</h2><div class="form"><label>Fecha<input type="date" id="o1"></label><label>Valor total USD<input type="number" id="o2" min="0" step="0.01"></label><button class="b p" id="ob">Guardar</button></div></div>
 <div class="two"><div class="card"><h2>Aportes y retiros</h2><div class="tw"><table id="tf"></table></div></div><div class="card"><h2>Valores del portafolio</h2><div class="tw"><table id="to"></table></div></div></div>
 <div class="card"><h2>Respaldo y precios de VOO</h2><div class="row" style="justify-content:flex-start"><button class="b" id="xj">Exportar JSON</button><button class="b" id="xc">Exportar CSV</button><label class="b">Importar JSON<input type="file" id="ij" accept=".json" hidden></label><label class="b">Importar precios VOO (CSV)<input type="file" id="ip" accept=".csv" hidden></label></div><p class="note" id="pst"></p>
-<p class="note">Precios: descarga el historial de VOO desde Yahoo Finance (pestaña Historical Data → Download). Se usa la columna "Adj Close". Tus datos se guardan solo en este navegador: haz respaldos.</p></div></section></div><div id="toast"></div>
+<p class="note">Los precios de VOO se actualizan solos cada día hábil (cierre ajustado por dividendos). Tus datos se guardan solo en este navegador: haz respaldos.</p></div></section></div><div id="toast"></div>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],D0="2026-02-06",KEY="inv_v1";
 let S={flows:[],obs:[],prices:{},fx:950,theme:"d"};try{Object.assign(S,JSON.parse(localStorage.getItem(KEY)||"{}"))}catch(e){}
